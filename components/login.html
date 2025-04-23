@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in - Pinterest Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/68d3c4da02.js" crossorigin="anonymous"></script>
+</head>
+<body class="auth-body">
+    <div class="auth-page">
+        <div class="auth-container">
+            <i class="fa-brands fa-pinterest" style="color: #ff0f0f;"></i>
+            <h1>Welcome to Pinterest</h1>
+            <div class="auth-form-container">
+                <form class="auth-form" id="loginForm">
+                    <h2>Log in</h2>
+                    <div class="form-group">
+                        <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group forgot-password">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                    <button  class="auth-btn">Log in</button>
+                    
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <button type="button" class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        Continue with Facebook
+                    </button>
+                    
+                    <button type="button" class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Not on Pinterest yet? <a href="signup.html">Sign up</a></p>
+                    <p class="auth-terms">
+                        By continuing, you agree to Pinterest's <a href="#">Terms of Service</a> and acknowledge you've read our <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+          const storedUser = JSON.parse(localStorage.getItem("isLoggedIn")); // Fix: Check "user"
+          console.log(storedUser);
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+    
+            // Retrieve stored user data
+            const storedUser = JSON.parse(localStorage.getItem("isLoggedIn")); // Fix: Check "user"
+    
+            if (!storedUser) {
+                alert("No user found. Please sign up first!");
+                return;
+            }
+    
+            // Check if credentials match
+            if (storedUser.email === email && storedUser.password === password) {
+                localStorage.setItem("loggedInUser", JSON.stringify(storedUser)); // Store session login
+                window.location.href = "MainPage.html"; // Redirect to MainPage
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+    </script>
+    
+    <!-- <script>
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+            console.log(storedUser);
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+
+            // Retrieve stored user data
+            const storedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+            if (!storedUser) {
+                alert("No user found. Please sign up first!");
+                return;
+            }
+
+            // Check if credentials match
+            if (storedUser.email === email && storedUser.password === password) {
+                localStorage.setItem("LoginUser", JSON.stringify(storedUser)); // Set logged-in user
+                window.location.href = "MainPage.html"; // Redirect to MainPage
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+    </script> -->
+</body>
+</html>

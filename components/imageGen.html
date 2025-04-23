@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/68d3c4da02.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Details</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="left-nav">
+                    <div class="logo">
+                        <a href="./Pinterest.html"><i class="fab fa-pinterest"></i> Pinterest</a>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#" class="active">Explore</a></li>
+                    </ul>
+                    <input type="text" placeholder="Search" class="search-box">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="right-nav">
+                    <ul class="nav-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="login.html" class="login-btn">Log in</a></li>
+                        <li><a href="signup.html" class="signup-btn">Sign up</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <h1>Image Details</h1>
+        <div class="image-wrapper">
+            <img class="main-image" id="mainImage" src="" alt="">
+            <i class="fas fa-download download-icon" onclick="downloadImage()"></i>
+            <button class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+
+        </div>
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="largeImage">
+        </div>
+        <p class="description" id="imageDescription"></p>
+
+        <div class="related-container">
+            <h2>Related Images</h2>
+            <div class="related-images" id="relatedImages"></div>
+        </div>
+    </div>
+
+    <script>
+        let imageData = JSON.parse(localStorage.getItem("selectedImage"));
+        const zoomButton = document.querySelector(".zoom");
+
+        if (imageData) {
+            document.getElementById("mainImage").src = imageData.urls.regular;
+            document.getElementById("imageDescription").innerText = imageData.alt_description || "No description available.";
+
+            let relatedImagesContainer = document.getElementById("relatedImages");
+            let Accesskey = "5sl50p7QQ7GgqXdbarz16qBK1ZHtJ25r9th7dbAK_XM";
+
+            async function fetchRelatedImages() {
+                let url = `https://api.unsplash.com/search/photos?page=1&query=${imageData.alt_description}&client_id=${Accesskey}&per_page=12`;
+                let response = await fetch(url);
+                let data = await response.json();
+
+                data.results.forEach((img) => {
+                    let imageWrapper = document.createElement("div");
+                    imageWrapper.classList.add("image-wrapper");
+
+                    let relatedImg = document.createElement("img");
+                    relatedImg.src = img.urls.small;
+                    relatedImg.alt = img.alt_description || "Related Image";
+
+                    let downloadIcon = document.createElement("i");
+                    downloadIcon.classList.add("fas", "fa-download", "download-icon");
+                    downloadIcon.onclick = () => downloadImage(img.urls.full);
+
+                    relatedImg.addEventListener("click", () => {
+                        localStorage.setItem("selectedImage", JSON.stringify(img));
+                        window.location.reload();
+                    });
+
+                    imageWrapper.appendChild(relatedImg);
+                    imageWrapper.appendChild(downloadIcon);
+                    relatedImagesContainer.appendChild(imageWrapper);
+                });
+            }
+
+            fetchRelatedImages();
+        }
+
+        function downloadImage(url = imageData.urls.full) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    let blobUrl = URL.createObjectURL(blob);
+                    let a = document.createElement("a");
+                    a.href = blobUrl;
+                    a.download = "image.jpg";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(blobUrl); // Free memory
+                })
+                .catch(error => console.error("Error downloading image:", error));
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("imageModal");
+            const modalImage = document.getElementById("largeImage");
+            const closeButton = document.querySelector(".close");
+
+            zoomButton.addEventListener("click", function () {
+                modal.style.display = "block";
+                modalImage.src = mainImage.src;
+              
+            
+            });
+
+            closeButton.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            // Close modal when clicking outside the image
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

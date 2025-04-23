@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Welcome, <span id="username"></span>!</h2>
+    <p>Your email: <span id="userEmail"></span></p>
+    <button id="logoutBtn">Logout</button>
+
+    <script>
+        // Retrieve user data from local storage
+        const userData = JSON.parse(localStorage.getItem("user"));
+
+        if (userData) {
+            document.getElementById("username").textContent = userData.name;
+            document.getElementById("userEmail").textContent = userData.email;
+        } else {
+            // Redirect to signup page if no user data is found
+            window.location.href = "pinterest.html";
+        }
+
+        // Logout function
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            localStorage.removeItem("user"); // Clear user data
+            window.location.href = "pinterest.html"; // Redirect to signup page
+        });
+    </script>
+</body>
+</html>

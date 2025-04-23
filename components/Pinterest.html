@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinterest</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="pinterest.css" />
+    
+  </head>
+  <body>
+    <!-- ! navbar -->
+    <nav class="navbar">
+      <div class="logo-section">
+        <a href="#" class="logo" style="text-decoration: none;">
+          <svg viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img">
+            <path
+              d="M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12"
+              fill="#e60023"
+            ></path>
+          </svg>
+          Pinterest
+        </a>
+        <a href="./explore.html" style="text-decoration: none; color: #111; font-weight: 600"
+          >Explore</a
+        >
+      </div>
+      <div class="nav-links">
+        <a href="./about.html">About</a>
+        <a href="./business.html">Business</a>
+        <a href="./blog.html">Blog</a>
+        <button class="btn btn-primary" ><a href="./login.html">Log in</a></button>
+        <button class="btn btn-secondary" style="margin-left: 8px">
+          <a href="./signup.html">Sign Up</a>
+        </button>
+      </div>
+    </nav>
+    <!-- ! hero section -->
+    <section class="hero">
+      <h1 class="hero-title">Get your next</h1>
+      <h2 class="hero-subtitle">weeknight dinner idea</h2>
+
+      <div class="carousel-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <div class="image-gallery">
+        <img
+          src="./assets/dinner1.jpg"
+          alt="Food dish"
+          id="galleryImage1"
+          class="gallery-image"
+        />
+        <img
+          src="./assets/dinner2.jpg"
+          alt="Food dish"
+          id="galleryImage2"
+          class="gallery-image"
+        />
+        <img
+          src="./assets/dinner3.jpg"
+          alt="Food dish"
+          id="galleryImage3"
+          class="gallery-image"
+        />
+        <img
+          src="./assets/dinner4.jpg"
+          alt="Food dish"
+          id="galleryImage4"
+          class="gallery-image"
+        />
+        <img
+          src="./assets/dinner5.jpg"
+          alt="Food dish"
+          id="galleryImage5"
+          class="gallery-image"
+        />
+        <img
+          src="./assets/dinner6.jpg"
+          alt="Food dish"
+          id="galleryImage6"
+          class="gallery-image"
+        />
+        <img
+          src="./assets/dinner7.jpg"
+          alt="Food dish"
+          id="galleryImage7"
+          class="gallery-image"
+        />
+      </div>
+
+      <div class="down-arrow">
+        <svg viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img">
+          <path
+            d="M12 19.5.66 8.29c-.88-.86-.88-2.27 0-3.14.88-.87 2.3-.87 3.18 0L12 13.21l8.16-8.06c.88-.87 2.3-.87 3.18 0 .88.87.88 2.28 0 3.14L12 19.5z"
+            fill="white"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <div class="how-it-works">
+      Here's how it works
+      <span class="how-it-works-arrow">▼</span>
+    </div>
+    <!-- !gallery container -->
+    <div class="container">
+        <!-- Left side - Image collage -->
+        <div class="image-collage">
+            <div class="image-container img1">
+                <img src="./assets/chicken4.png" alt="Food dish with sauce">
+            </div>
+            <div class="image-container img2">
+                <img src="./assets/chicken2.png" alt="Spicy chicken dish">
+            </div>
+            <div class="image-container yellow-card"></div>
+            <div class="image-container img4">
+                <img src="./assets/chicken.png" alt="Chicken dinner plate with salad">
+            </div>
+            <div class="image-container img5">
+                <img src="./assets/chicken3.png" alt="Food with sauce">
+            </div>
+            
+            <!-- Search bar -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search for recipes..." value="easy chicken dinner">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right side - Content -->
+        <div class="content">
+            <h1>Search for an idea</h1>
+            <p>What do you want to try next? Think of something you're into – such as 'easy chicken dinner' – and see what you find.</p>
+            <button id="explore-btn"><a style="text-decoration: none; color: white;" href="./explore.html">Explore</a></button>
+        </div>
+    </div>
+    <!-- ! idea explore -->
+    <div class="Ideacontainer">
+        <div class="text-section">
+            <h1>Save ideas you like</h1>
+            <p>Collect your favourites so you can get back to them later.</p>
+            <button class="explore-btn"><a style="text-decoration: none; color: white;" href="./explore.html">Explore</a></button>
+        </div>
+        <div class="image-grid">
+            <div class="image-box big" id="img1" style="background-image: url('./assets/idea2.png');">Fern future home vibes</div>
+            <div class="image-box small" id="img2" style="background-image: url('./assets/idea7.png');">My Scandinavian bedroom</div>
+            <div class="image-box small" id="img3" style="background-image: url('./assets/idea5.png');"> Our bathroom upgrad</div>
+            <div class="image-box small" id="img4" style="background-image: url('./assets/idea3.png');">The decking of my dreams</div>
+            <div class="image-box small" id="img5" style="background-image: url('./assets/idea6.png');">Serve my drinks in style</div>
+        </div>
+    </div>
+    <!-- !model section -->
+    <div class="modelContainer">
+        <div class="left-section">
+            <img src="./assets/model.png" alt="Model" class="modelbackground-img">
+            <div class="overlay-card">
+               
+                <img src="./assets/model2.png" alt="model">
+                <div class="modelprofile">
+                    <img src="./assets/model3.png" alt="Profile" class="modelprofile-img">
+                    <div>
+                        <p class="modelprofile-name">Scout the City</p>
+                        <p class="followers">56.7k followers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <h1>See it, make it, <br> try it, do it</h1>
+            <p>The best part of Pinterest is discovering new things and ideas from people around the world.</p>
+            <button class="explore-btn"><a style="text-decoration: none; color: white;" href="./explore.html">Explore</a></button>
+        </div>
+    </div>
+    <!-- ! Signup Seciton  -->
+    <section class="signup-section">
+      <div class="background-collage">
+          <!-- Background images are added via CSS -->
+      </div>
+  
+      <div class="overlay">
+          <div class="signup-text">
+              <h1 class="signup-heading">Sign up to get<br>your ideas</h1>
+          </div>
+      </div>
+  
+      <div class="modal-container">
+          <div class="modalMain">
+              <div class="modalLogo">
+                  <svg height="32" width="32" viewBox="0 0 24 24" aria-label="Pinterest logo" role="img">
+                      <path d="M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12" fill="#E60023"></path>
+                  </svg>
+              </div>
+              <h2>Welcome to Pinterest</h2>
+              <p class="subtitle">Find new ideas to try</p>
+              
+              <form id="signupForm">
+                  
+                  
+                  <div class="form-group">
+                      <label for="username">Username</label>
+                      <div class="password-container">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <div class="password-container">
+                      <input type="password" id="password" placeholder="Create a password" required>
+                      <button type="button" class="toggle-password">
+                          <span class="material-symbols-outlined">visibility</span>
+                      </button>
+                  </div>
+              </div>
+  
+                  
+                  
+                  <button  class="continue-btn">Continue</button>
+                  
+                  <div class="divider">
+                      <span>OR</span>
+                  </div>
+                  
+                  <button type="button" class="google-btn">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48">
+                          <g>
+                              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                              <path fill="none" d="M0 0h48v48H0z"></path>
+                          </g>
+                      </svg>
+                      Continue with Google
+                  </button>
+                  
+                  <div class="terms">
+                      By continuing, you agree to Pinterest's <a href="#">Terms of Service</a> and acknowledge that you've read our <a href="#">Privacy Policy</a>. <a href="#">Notice at collection</a>.
+                  </div>
+                  
+                  <div class="login-link">
+                      Already a member? <a href="./login.html">Log in</a>
+                  </div>
+              </form>
+              
+              <div class="business-account">
+                  <a href="#">Create a free business account</a>
+              </div>
+          </div>
+      </div>
+      
+      <footer>
+          <div class="footer-links">
+              <a href="#">Terms of Service</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Help</a>
+              <a href="#">iPhone app</a>
+              <a href="#">Android app</a>
+              <a href="#">Users</a>
+              <a href="#">Collections</a>
+              <a href="#">Shopping</a>
+              <a href="#">Explore</a>
+              <a href="#">Shop</a>
+              <a href="#">Non-User Notice</a>
+          </div>
+      </footer>
+  </section>
+  <script src="pinterest.js"></script>
+   
+  </body>
+</html>
